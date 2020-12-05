@@ -51,17 +51,17 @@ module.exports = app => {
   app.get(`/getFiles/:name`, async (req, res) => {
     var params = req.params;
     console.log(req.url);
-    if (req.url.indexOf('/getFiles/') == 0) {
+    if (req.url.indexOf("/getFiles/") == 0) {
       if (true) {
         // res.setHeader('X-Accel-Redirect', path.join(__dirname, "../") + "/static/" + '2.jpg');
         // res.end('');
-        res.writeHead(200, { 'X-Accel-Redirect': '/files/' + params.name });
+        res.writeHead(200, { "X-Accel-Redirect": "/files/" + params.name });
         res.end();
       } else {
         // return some error
       }
     } else {
-      res.end('works');
+      res.end("works");
     }
     // var params = req.params;
     // console.log("params", params);
@@ -88,18 +88,20 @@ module.exports = app => {
   app.get(`/getFiles2/:name`, async (req, res) => {
     var params = req.params;
     console.log(req.url);
-    if (req.url.indexOf('/getFiles2/') == 0) {
+    if (req.url.indexOf("/getFiles2/") == 0) {
       if (true) {
         // res.setHeader('X-Accel-Redirect', path.join(__dirname, "../") + "/static/" + '2.jpg');
         // res.end('');
         // res.writeHead(200, { 'X-Accel-Redirect': '/files/download/' + params.name });
-        res.writeHead(200, { 'X-Accel-Redirect': '/files/images/' + params.name });
+        res.writeHead(200, {
+          "X-Accel-Redirect": "/files/images/" + params.name
+        });
         res.end();
       } else {
         // return some error
       }
     } else {
-      res.end('works');
+      res.end("works");
     }
     // var params = req.params;
     // console.log("params", params);
@@ -126,18 +128,18 @@ module.exports = app => {
   app.get(`/getFiles3/:name`, async (req, res) => {
     var params = req.params;
     console.log(req.url);
-    if (req.url.indexOf('/getFiles3/') == 0) {
+    if (req.url.indexOf("/getFiles3/") == 0) {
       if (true) {
         // res.setHeader('X-Accel-Redirect', path.join(__dirname, "../") + "/static/" + '2.jpg');
         // res.end('');
         // res.writeHead(200, { 'X-Accel-Redirect': '/files/download/' + params.name });
-        res.writeHead(200, { 'X-Accel-Redirect': '/files/' + '1.jpg' });
+        res.writeHead(200, { "X-Accel-Redirect": "/files/" + "1.jpg" });
         res.end();
       } else {
         // return some error
       }
     } else {
-      res.end('works');
+      res.end("works");
     }
     // var params = req.params;
     // console.log("params", params);
@@ -164,20 +166,23 @@ module.exports = app => {
   app.get(`/getFiles4/:name`, async (req, res) => {
     var params = req.params;
     console.log(req.url);
-    if (req.url.indexOf('/getFiles4/') == 0) {
+    if (req.url.indexOf("/getFiles4/") == 0) {
       if (true) {
         // res.setHeader('X-Accel-Redirect', path.join(__dirname, "../") + "/static/" + '2.jpg');
         // res.end('');
         // res.writeHead(200, { 'X-Accel-Redirect': '/files/download/' + params.name });
-        res.writeHead(200, { 'X-Accel-Redirect': '/files/' + req.query.name });
-        res.writeHead(200, { 'Content-Disposition': "attachment;filename="+req.query.name });
-        res.writeHead(200, { 'Content-Type': "application/octet-stream" });
+        res.writeHead(200, {
+          "X-Accel-Redirect": "/files/" + req.query.name,
+          "Content-Disposition": "attachment;filename=" + req.query.name,
+          "Content-Type": "application/octet-stream"
+        });
+
         res.end();
       } else {
         // return some error
       }
     } else {
-      res.end('works');
+      res.end("works");
     }
     // var params = req.params;
     // console.log("params", params);
