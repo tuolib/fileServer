@@ -164,7 +164,7 @@ module.exports = app => {
   app.get(`/getFiles4/:name`, async (req, res) => {
     var params = req.params;
     console.log(req.url);
-    if (req.url.indexOf('/getFiles3/') == 0) {
+    if (req.url.indexOf('/getFiles4/') == 0) {
       if (true) {
         // res.setHeader('X-Accel-Redirect', path.join(__dirname, "../") + "/static/" + '2.jpg');
         // res.end('');
