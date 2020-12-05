@@ -170,6 +170,8 @@ module.exports = app => {
         // res.end('');
         // res.writeHead(200, { 'X-Accel-Redirect': '/files/download/' + params.name });
         res.writeHead(200, { 'X-Accel-Redirect': '/files/' + req.query.name });
+        res.writeHead(200, { 'Content-Disposition': "attachment;filename="+req.query.name });
+        res.writeHead(200, { 'Content-Type': "application/octet-stream" });
         res.end();
       } else {
         // return some error
